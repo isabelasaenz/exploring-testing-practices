@@ -44,8 +44,22 @@ Escolha uma prática ou dado de teste relevante e explique com suas próprias pa
 
 ## Respostas
 
-Repositório: `<URL_DO_REPOSITÓRIO>`
+Repositório: https://github.com/open-metadata/OpenMetadata
 
-URL TestMiner: `<URL_NO_TESTMINER>`
+URL TestMiner: https://andrehora.github.io/testminer/#open-metadata/OpenMetadata
 
-Explicação: `<SUA_EXPLICAÇÃO>`
+**Explicação:**
+
+O OpenMetadata é um projeto grande, com backend em Java, ingestão em Python e interface em TypeScript. Por isso, ele usa ferramentas de teste diferentes para cada parte:
+
+- Java: JUnit e Mockito  
+- Python: pytest  
+- TypeScript/React: Jest e Playwright  
+
+Uma prática relevante é a organização dos testes em níveis:
+
+1. Testes unitários: testam partes pequenas do código, são rápidos.  
+2. Testes de integração: testam vários serviços juntos, usando banco de dados e buscadores reais com Testcontainers.  
+3. Testes E2E (ponta a ponta): simulam o usuário usando a interface, com Playwright.  
+
+Isso forma uma espécie de pirâmide de testes, com muitos testes unitários, alguns de integração e poucos E2E. O TestMiner mostra que o projeto tem milhares de arquivos de teste, helpers, fixtures e mocks, ou seja, os testes são levados a sério. Essa organização ajuda a encontrar erros cedo e garante que o sistema funcione bem no final.
